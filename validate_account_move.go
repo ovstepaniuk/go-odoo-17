@@ -2,10 +2,10 @@ package odoo
 
 // ValidateAccountMove represents validate.account.move model.
 type ValidateAccountMove struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
 	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
 	DisplayName *String   `xmlrpc:"display_name,omitempty"`
+	ForcePost   *Bool     `xmlrpc:"force_post,omitempty"`
 	Id          *Int      `xmlrpc:"id,omitempty"`
 	WriteDate   *Time     `xmlrpc:"write_date,omitempty"`
 	WriteUid    *Many2One `xmlrpc:"write_uid,omitempty"`
@@ -34,7 +34,7 @@ func (c *Client) CreateValidateAccountMove(vam *ValidateAccountMove) (int64, err
 	return ids[0], nil
 }
 
-// CreateValidateAccountMoves creates a new validate.account.move model and returns its id.
+// CreateValidateAccountMove creates a new validate.account.move model and returns its id.
 func (c *Client) CreateValidateAccountMoves(vams []*ValidateAccountMove) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range vams {

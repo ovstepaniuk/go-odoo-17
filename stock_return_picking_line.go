@@ -2,7 +2,6 @@ package odoo
 
 // StockReturnPickingLine represents stock.return.picking.line model.
 type StockReturnPickingLine struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
 	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
 	DisplayName *String   `xmlrpc:"display_name,omitempty"`
@@ -40,7 +39,7 @@ func (c *Client) CreateStockReturnPickingLine(srpl *StockReturnPickingLine) (int
 	return ids[0], nil
 }
 
-// CreateStockReturnPickingLines creates a new stock.return.picking.line model and returns its id.
+// CreateStockReturnPickingLine creates a new stock.return.picking.line model and returns its id.
 func (c *Client) CreateStockReturnPickingLines(srpls []*StockReturnPickingLine) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range srpls {

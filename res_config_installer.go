@@ -2,7 +2,6 @@ package odoo
 
 // ResConfigInstaller represents res.config.installer model.
 type ResConfigInstaller struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
 	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
 	DisplayName *String   `xmlrpc:"display_name,omitempty"`
@@ -34,7 +33,7 @@ func (c *Client) CreateResConfigInstaller(rci *ResConfigInstaller) (int64, error
 	return ids[0], nil
 }
 
-// CreateResConfigInstallers creates a new res.config.installer model and returns its id.
+// CreateResConfigInstaller creates a new res.config.installer model and returns its id.
 func (c *Client) CreateResConfigInstallers(rcis []*ResConfigInstaller) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range rcis {

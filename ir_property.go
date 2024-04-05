@@ -2,7 +2,6 @@ package odoo
 
 // IrProperty represents ir.property model.
 type IrProperty struct {
-	LastUpdate     *Time      `xmlrpc:"__last_update,omitempty"`
 	CompanyId      *Many2One  `xmlrpc:"company_id,omitempty"`
 	CreateDate     *Time      `xmlrpc:"create_date,omitempty"`
 	CreateUid      *Many2One  `xmlrpc:"create_uid,omitempty"`
@@ -45,7 +44,7 @@ func (c *Client) CreateIrProperty(ip *IrProperty) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateIrPropertys creates a new ir.property model and returns its id.
+// CreateIrProperty creates a new ir.property model and returns its id.
 func (c *Client) CreateIrPropertys(ips []*IrProperty) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range ips {

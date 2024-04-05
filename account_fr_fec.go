@@ -2,18 +2,19 @@ package odoo
 
 // AccountFrFec represents account.fr.fec model.
 type AccountFrFec struct {
-	LastUpdate  *Time      `xmlrpc:"__last_update,omitempty"`
-	CreateDate  *Time      `xmlrpc:"create_date,omitempty"`
-	CreateUid   *Many2One  `xmlrpc:"create_uid,omitempty"`
-	DateFrom    *Time      `xmlrpc:"date_from,omitempty"`
-	DateTo      *Time      `xmlrpc:"date_to,omitempty"`
-	DisplayName *String    `xmlrpc:"display_name,omitempty"`
-	ExportType  *Selection `xmlrpc:"export_type,omitempty"`
-	FecData     *String    `xmlrpc:"fec_data,omitempty"`
-	Filename    *String    `xmlrpc:"filename,omitempty"`
-	Id          *Int       `xmlrpc:"id,omitempty"`
-	WriteDate   *Time      `xmlrpc:"write_date,omitempty"`
-	WriteUid    *Many2One  `xmlrpc:"write_uid,omitempty"`
+	CreateDate         *Time      `xmlrpc:"create_date,omitempty"`
+	CreateUid          *Many2One  `xmlrpc:"create_uid,omitempty"`
+	DateFrom           *Time      `xmlrpc:"date_from,omitempty"`
+	DateTo             *Time      `xmlrpc:"date_to,omitempty"`
+	DisplayName        *String    `xmlrpc:"display_name,omitempty"`
+	ExcludedJournalIds *Relation  `xmlrpc:"excluded_journal_ids,omitempty"`
+	ExportType         *Selection `xmlrpc:"export_type,omitempty"`
+	FecData            *String    `xmlrpc:"fec_data,omitempty"`
+	Filename           *String    `xmlrpc:"filename,omitempty"`
+	Id                 *Int       `xmlrpc:"id,omitempty"`
+	TestFile           *Bool      `xmlrpc:"test_file,omitempty"`
+	WriteDate          *Time      `xmlrpc:"write_date,omitempty"`
+	WriteUid           *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
 
 // AccountFrFecs represents array of account.fr.fec model.
@@ -39,7 +40,7 @@ func (c *Client) CreateAccountFrFec(aff *AccountFrFec) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateAccountFrFecs creates a new account.fr.fec model and returns its id.
+// CreateAccountFrFec creates a new account.fr.fec model and returns its id.
 func (c *Client) CreateAccountFrFecs(affs []*AccountFrFec) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range affs {

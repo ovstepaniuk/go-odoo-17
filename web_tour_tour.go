@@ -2,7 +2,6 @@ package odoo
 
 // WebTourTour represents web_tour.tour model.
 type WebTourTour struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
 	DisplayName *String   `xmlrpc:"display_name,omitempty"`
 	Id          *Int      `xmlrpc:"id,omitempty"`
 	Name        *String   `xmlrpc:"name,omitempty"`
@@ -32,7 +31,7 @@ func (c *Client) CreateWebTourTour(wt *WebTourTour) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateWebTourTours creates a new web_tour.tour model and returns its id.
+// CreateWebTourTour creates a new web_tour.tour model and returns its id.
 func (c *Client) CreateWebTourTours(wts []*WebTourTour) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range wts {
