@@ -2,7 +2,6 @@ package odoo
 
 // ProductPricelistItem represents product.pricelist.item model.
 type ProductPricelistItem struct {
-	LastUpdate      *Time      `xmlrpc:"__last_update,omitempty"`
 	AppliedOn       *Selection `xmlrpc:"applied_on,omitempty"`
 	Base            *Selection `xmlrpc:"base,omitempty"`
 	BasePricelistId *Many2One  `xmlrpc:"base_pricelist_id,omitempty"`
@@ -17,7 +16,7 @@ type ProductPricelistItem struct {
 	DisplayName     *String    `xmlrpc:"display_name,omitempty"`
 	FixedPrice      *Float     `xmlrpc:"fixed_price,omitempty"`
 	Id              *Int       `xmlrpc:"id,omitempty"`
-	MinQuantity     *Int       `xmlrpc:"min_quantity,omitempty"`
+	MinQuantity     *Float     `xmlrpc:"min_quantity,omitempty"`
 	Name            *String    `xmlrpc:"name,omitempty"`
 	PercentPrice    *Float     `xmlrpc:"percent_price,omitempty"`
 	Price           *String    `xmlrpc:"price,omitempty"`
@@ -29,6 +28,7 @@ type ProductPricelistItem struct {
 	PricelistId     *Many2One  `xmlrpc:"pricelist_id,omitempty"`
 	ProductId       *Many2One  `xmlrpc:"product_id,omitempty"`
 	ProductTmplId   *Many2One  `xmlrpc:"product_tmpl_id,omitempty"`
+	RuleTip         *String    `xmlrpc:"rule_tip,omitempty"`
 	WriteDate       *Time      `xmlrpc:"write_date,omitempty"`
 	WriteUid        *Many2One  `xmlrpc:"write_uid,omitempty"`
 }
@@ -56,7 +56,7 @@ func (c *Client) CreateProductPricelistItem(ppi *ProductPricelistItem) (int64, e
 	return ids[0], nil
 }
 
-// CreateProductPricelistItems creates a new product.pricelist.item model and returns its id.
+// CreateProductPricelistItem creates a new product.pricelist.item model and returns its id.
 func (c *Client) CreateProductPricelistItems(ppis []*ProductPricelistItem) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range ppis {

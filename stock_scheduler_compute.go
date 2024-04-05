@@ -2,7 +2,6 @@ package odoo
 
 // StockSchedulerCompute represents stock.scheduler.compute model.
 type StockSchedulerCompute struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
 	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
 	DisplayName *String   `xmlrpc:"display_name,omitempty"`
@@ -34,7 +33,7 @@ func (c *Client) CreateStockSchedulerCompute(ssc *StockSchedulerCompute) (int64,
 	return ids[0], nil
 }
 
-// CreateStockSchedulerComputes creates a new stock.scheduler.compute model and returns its id.
+// CreateStockSchedulerCompute creates a new stock.scheduler.compute model and returns its id.
 func (c *Client) CreateStockSchedulerComputes(sscs []*StockSchedulerCompute) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range sscs {

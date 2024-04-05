@@ -2,16 +2,24 @@ package odoo
 
 // IapAccount represents iap.account model.
 type IapAccount struct {
-	LastUpdate   *Time     `xmlrpc:"__last_update,omitempty"`
-	AccountToken *String   `xmlrpc:"account_token,omitempty"`
-	CompanyId    *Many2One `xmlrpc:"company_id,omitempty"`
-	CreateDate   *Time     `xmlrpc:"create_date,omitempty"`
-	CreateUid    *Many2One `xmlrpc:"create_uid,omitempty"`
-	DisplayName  *String   `xmlrpc:"display_name,omitempty"`
-	Id           *Int      `xmlrpc:"id,omitempty"`
-	ServiceName  *String   `xmlrpc:"service_name,omitempty"`
-	WriteDate    *Time     `xmlrpc:"write_date,omitempty"`
-	WriteUid     *Many2One `xmlrpc:"write_uid,omitempty"`
+	AccountInfoId    *Many2One `xmlrpc:"account_info_id,omitempty"`
+	AccountInfoIds   *Relation `xmlrpc:"account_info_ids,omitempty"`
+	AccountToken     *String   `xmlrpc:"account_token,omitempty"`
+	Balance          *String   `xmlrpc:"balance,omitempty"`
+	CompanyIds       *Relation `xmlrpc:"company_ids,omitempty"`
+	CreateDate       *Time     `xmlrpc:"create_date,omitempty"`
+	CreateUid        *Many2One `xmlrpc:"create_uid,omitempty"`
+	Description      *String   `xmlrpc:"description,omitempty"`
+	DisplayName      *String   `xmlrpc:"display_name,omitempty"`
+	Id               *Int      `xmlrpc:"id,omitempty"`
+	Name             *String   `xmlrpc:"name,omitempty"`
+	ServiceName      *String   `xmlrpc:"service_name,omitempty"`
+	ShowToken        *Bool     `xmlrpc:"show_token,omitempty"`
+	WarnMe           *Bool     `xmlrpc:"warn_me,omitempty"`
+	WarningEmail     *String   `xmlrpc:"warning_email,omitempty"`
+	WarningThreshold *Float    `xmlrpc:"warning_threshold,omitempty"`
+	WriteDate        *Time     `xmlrpc:"write_date,omitempty"`
+	WriteUid         *Many2One `xmlrpc:"write_uid,omitempty"`
 }
 
 // IapAccounts represents array of iap.account model.
@@ -37,7 +45,7 @@ func (c *Client) CreateIapAccount(ia *IapAccount) (int64, error) {
 	return ids[0], nil
 }
 
-// CreateIapAccounts creates a new iap.account model and returns its id.
+// CreateIapAccount creates a new iap.account model and returns its id.
 func (c *Client) CreateIapAccounts(ias []*IapAccount) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range ias {

@@ -2,7 +2,6 @@ package odoo
 
 // AccountUnreconcile represents account.unreconcile model.
 type AccountUnreconcile struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omitempty"`
 	CreateDate  *Time     `xmlrpc:"create_date,omitempty"`
 	CreateUid   *Many2One `xmlrpc:"create_uid,omitempty"`
 	DisplayName *String   `xmlrpc:"display_name,omitempty"`
@@ -34,7 +33,7 @@ func (c *Client) CreateAccountUnreconcile(au *AccountUnreconcile) (int64, error)
 	return ids[0], nil
 }
 
-// CreateAccountUnreconciles creates a new account.unreconcile model and returns its id.
+// CreateAccountUnreconcile creates a new account.unreconcile model and returns its id.
 func (c *Client) CreateAccountUnreconciles(aus []*AccountUnreconcile) ([]int64, error) {
 	var vv []interface{}
 	for _, v := range aus {
