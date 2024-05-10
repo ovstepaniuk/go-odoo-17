@@ -30,6 +30,8 @@ type AccountMoveSend struct {
 	SendByPostWarningMessage *String     `xmlrpc:"send_by_post_warning_message,omitempty"`
 	SendMailReadonly         *Bool       `xmlrpc:"send_mail_readonly,omitempty"`
 	SendMailWarningMessage   interface{} `xmlrpc:"send_mail_warning_message,omitempty"`
+	ShowUblCompanyWarning    *Bool       `xmlrpc:"show_ubl_company_warning,omitempty"`
+	UblPartnerWarning        *String     `xmlrpc:"ubl_partner_warning,omitempty"`
 	WriteDate                *Time       `xmlrpc:"write_date,omitempty"`
 	WriteUid                 *Many2One   `xmlrpc:"write_uid,omitempty"`
 }

@@ -17,6 +17,7 @@ type AccountAnalyticAccount struct {
 	Id                       *Int      `xmlrpc:"id,omitempty"`
 	InvoiceCount             *Int      `xmlrpc:"invoice_count,omitempty"`
 	LineIds                  *Relation `xmlrpc:"line_ids,omitempty"`
+	MachineInitiativeName    *String   `xmlrpc:"machine_initiative_name,omitempty"`
 	MessageAttachmentCount   *Int      `xmlrpc:"message_attachment_count,omitempty"`
 	MessageFollowerIds       *Relation `xmlrpc:"message_follower_ids,omitempty"`
 	MessageHasError          *Bool     `xmlrpc:"message_has_error,omitempty"`
@@ -35,6 +36,7 @@ type AccountAnalyticAccount struct {
 	PurchaseOrderCount       *Int      `xmlrpc:"purchase_order_count,omitempty"`
 	RatingIds                *Relation `xmlrpc:"rating_ids,omitempty"`
 	RootPlanId               *Many2One `xmlrpc:"root_plan_id,omitempty"`
+	TagIds                   *Relation `xmlrpc:"tag_ids,omitempty"`
 	VendorBillCount          *Int      `xmlrpc:"vendor_bill_count,omitempty"`
 	WebsiteMessageIds        *Relation `xmlrpc:"website_message_ids,omitempty"`
 	WriteDate                *Time     `xmlrpc:"write_date,omitempty"`

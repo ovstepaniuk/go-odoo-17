@@ -137,6 +137,9 @@ type ResUsers struct {
 	LogIds                             *Relation  `xmlrpc:"log_ids,omitempty"`
 	Login                              *String    `xmlrpc:"login,omitempty"`
 	LoginDate                          *Time      `xmlrpc:"login_date,omitempty"`
+	MachineOrganizationName            *String    `xmlrpc:"machine_organization_name,omitempty"`
+	MachineUserEmail                   *String    `xmlrpc:"machine_user_email,omitempty"`
+	MachineUserLogin                   *String    `xmlrpc:"machine_user_login,omitempty"`
 	Marital                            *Selection `xmlrpc:"marital,omitempty"`
 	MeetingCount                       *Int       `xmlrpc:"meeting_count,omitempty"`
 	MeetingIds                         *Relation  `xmlrpc:"meeting_ids,omitempty"`

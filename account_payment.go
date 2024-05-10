@@ -90,6 +90,9 @@ type AccountPayment struct {
 	IsStorno                              *Bool       `xmlrpc:"is_storno,omitempty"`
 	JournalId                             *Many2One   `xmlrpc:"journal_id,omitempty"`
 	LineIds                               *Relation   `xmlrpc:"line_ids,omitempty"`
+	MachineInvoice                        *Bool       `xmlrpc:"machine_invoice,omitempty"`
+	MachineInvoiceTitle                   *String     `xmlrpc:"machine_invoice_title,omitempty"`
+	MachinePurchaseOrder                  *String     `xmlrpc:"machine_purchase_order,omitempty"`
 	MadeSequenceHole                      *Bool       `xmlrpc:"made_sequence_hole,omitempty"`
 	MediumId                              *Many2One   `xmlrpc:"medium_id,omitempty"`
 	MessageAttachmentCount                *Int        `xmlrpc:"message_attachment_count,omitempty"`
@@ -136,6 +139,7 @@ type AccountPayment struct {
 	PurchaseVendorBillId                  *Many2One   `xmlrpc:"purchase_vendor_bill_id,omitempty"`
 	QrCode                                *String     `xmlrpc:"qr_code,omitempty"`
 	QrCodeMethod                          *Selection  `xmlrpc:"qr_code_method,omitempty"`
+	QuantityTotal                         *Float      `xmlrpc:"quantity_total,omitempty"`
 	QuickEditMode                         *Bool       `xmlrpc:"quick_edit_mode,omitempty"`
 	QuickEditTotalAmount                  *Float      `xmlrpc:"quick_edit_total_amount,omitempty"`
 	QuickEncodingVals                     *String     `xmlrpc:"quick_encoding_vals,omitempty"`

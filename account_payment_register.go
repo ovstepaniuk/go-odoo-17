@@ -45,6 +45,7 @@ type AccountPaymentRegister struct {
 	WriteDate                     *Time      `xmlrpc:"write_date,omitempty"`
 	WriteUid                      *Many2One  `xmlrpc:"write_uid,omitempty"`
 	WriteoffAccountId             *Many2One  `xmlrpc:"writeoff_account_id,omitempty"`
+	WriteoffIsExchangeAccount     *Bool      `xmlrpc:"writeoff_is_exchange_account,omitempty"`
 	WriteoffLabel                 *String    `xmlrpc:"writeoff_label,omitempty"`
 }
 

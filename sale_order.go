@@ -24,10 +24,12 @@ type SaleOrder struct {
 	AmountUntaxed                *Float     `xmlrpc:"amount_untaxed,omitempty"`
 	AnalyticAccountId            *Many2One  `xmlrpc:"analytic_account_id,omitempty"`
 	AuthorizedTransactionIds     *Relation  `xmlrpc:"authorized_transaction_ids,omitempty"`
+	AutosalesConfigId            *Many2One  `xmlrpc:"autosales_config_id,omitempty"`
 	CampaignId                   *Many2One  `xmlrpc:"campaign_id,omitempty"`
 	ClientOrderRef               *String    `xmlrpc:"client_order_ref,omitempty"`
 	CommitmentDate               *Time      `xmlrpc:"commitment_date,omitempty"`
 	CompanyId                    *Many2One  `xmlrpc:"company_id,omitempty"`
+	ContributionsCreated         *Bool      `xmlrpc:"contributions_created,omitempty"`
 	CountryCode                  *String    `xmlrpc:"country_code,omitempty"`
 	CreateDate                   *Time      `xmlrpc:"create_date,omitempty"`
 	CreateUid                    *Many2One  `xmlrpc:"create_uid,omitempty"`
@@ -76,6 +78,7 @@ type SaleOrder struct {
 	PartnerInvoiceId             *Many2One  `xmlrpc:"partner_invoice_id,omitempty"`
 	PartnerShippingId            *Many2One  `xmlrpc:"partner_shipping_id,omitempty"`
 	PaymentTermId                *Many2One  `xmlrpc:"payment_term_id,omitempty"`
+	PendingEmailTemplateId       *Many2One  `xmlrpc:"pending_email_template_id,omitempty"`
 	PickingIds                   *Relation  `xmlrpc:"picking_ids,omitempty"`
 	PickingPolicy                *Selection `xmlrpc:"picking_policy,omitempty"`
 	PrepaymentPercent            *Float     `xmlrpc:"prepayment_percent,omitempty"`
@@ -123,6 +126,8 @@ type SaleOrder struct {
 	WebsiteMessageIds            *Relation  `xmlrpc:"website_message_ids,omitempty"`
 	WriteDate                    *Time      `xmlrpc:"write_date,omitempty"`
 	WriteUid                     *Many2One  `xmlrpc:"write_uid,omitempty"`
+	XTitle                       *String    `xmlrpc:"x_title,omitempty"`
+	XTitleReadOnly               *String    `xmlrpc:"x_title_read_only,omitempty"`
 }
 
 // SaleOrders represents array of sale.order model.
