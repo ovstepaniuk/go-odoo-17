@@ -83,6 +83,7 @@ type ResPartner struct {
 	JournalItemCount                   *Int       `xmlrpc:"journal_item_count,omitempty"`
 	Lang                               *Selection `xmlrpc:"lang,omitempty"`
 	LastTimeEntriesChecked             *Time      `xmlrpc:"last_time_entries_checked,omitempty"`
+	MachineOrganizationName            *String    `xmlrpc:"machine_organization_name,omitempty"`
 	MeetingCount                       *Int       `xmlrpc:"meeting_count,omitempty"`
 	MeetingIds                         *Relation  `xmlrpc:"meeting_ids,omitempty"`
 	MessageAttachmentCount             *Int       `xmlrpc:"message_attachment_count,omitempty"`

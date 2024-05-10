@@ -6,6 +6,8 @@ type SaleOrderLine struct {
 	AnalyticDistributionSearch        interface{} `xmlrpc:"analytic_distribution_search,omitempty"`
 	AnalyticLineIds                   *Relation   `xmlrpc:"analytic_line_ids,omitempty"`
 	AnalyticPrecision                 *Int        `xmlrpc:"analytic_precision,omitempty"`
+	AutosalesBaseOrderLine            *Many2One   `xmlrpc:"autosales_base_order_line,omitempty"`
+	AutosalesLine                     *Bool       `xmlrpc:"autosales_line,omitempty"`
 	CompanyId                         *Many2One   `xmlrpc:"company_id,omitempty"`
 	CreateDate                        *Time       `xmlrpc:"create_date,omitempty"`
 	CreateUid                         *Many2One   `xmlrpc:"create_uid,omitempty"`

@@ -57,6 +57,7 @@ type CrmLead struct {
 	LeadMiningRequestId             *Many2One   `xmlrpc:"lead_mining_request_id,omitempty"`
 	LeadProperties                  interface{} `xmlrpc:"lead_properties,omitempty"`
 	LostReasonId                    *Many2One   `xmlrpc:"lost_reason_id,omitempty"`
+	MachineLeadName                 *String     `xmlrpc:"machine_lead_name,omitempty"`
 	MediumId                        *Many2One   `xmlrpc:"medium_id,omitempty"`
 	MeetingDisplayDate              *Time       `xmlrpc:"meeting_display_date,omitempty"`
 	MeetingDisplayLabel             *String     `xmlrpc:"meeting_display_label,omitempty"`
